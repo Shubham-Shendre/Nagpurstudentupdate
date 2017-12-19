@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?><!-- not using this -->
+<!--
+ Created by Shubham Dilip Shendre aka SdS
+             Adnan Kazi aka Addy
+             Furqan
+             Sadat Hussain
+
+  for NagStud LLP Project nagpurstudents
+ -->
+<selector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <item
+        android:color="@color/colorWhite"
+        android:state_enabled="true" />
+
+    <item
+        android:color="@color/colorPrimaryDark"
+        android:state_enabled="false" />
+</selector>

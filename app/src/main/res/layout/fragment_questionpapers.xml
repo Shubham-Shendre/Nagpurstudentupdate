@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?><!-- this file handle layout under the questionpapers fragment-->
+<!--
+ Created by Shubham Dilip Shendre aka SdS
+             Adnan Kazi aka Addy
+             Furqan
+             Sadat Hussain
+
+  for NagStud LLP Project nagpurstudents
+ -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="@dimen/activity_horizontal_margin">
+    <!-- display thetext from fragment questionpapers.java -->
+    <TextView
+        android:id="@+id/text_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="A TextView in Fragment" />
+    <!-- add the textview to add display the please select the year fragment-->
+    <TextView
+        android:id="@+id/text_view2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="please select year" />
+    <!-- add the drop down list-->
+    <Spinner
+        android:id="@+id/year"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginTop="8dp" />
+    <!-- add the textview for th msg-->
+    <TextView
+        android:id="@+id/text_view3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Question papers download" />
+    <!-- add the listview of the answerspaper-->
+    <ListView
+        android:id="@+id/list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+</LinearLayout>

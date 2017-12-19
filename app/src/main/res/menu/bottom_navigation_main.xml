@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?><!-- this xml file is not under any use -->
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <!-- adding the item inside the navigation bottom-->
+    <item
+        android:id="@+id/action_favorites"
+        android:enabled="true"
+        android:icon="@drawable/adele"
+        android:title="fav"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/action_schedules"
+        android:enabled="true"
+        android:icon="@drawable/adele"
+        android:title="schedules"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/action_music"
+        android:enabled="true"
+        android:icon="@drawable/adele"
+        android:title="sass"
+        app:showAsAction="ifRoom" />
+</menu>

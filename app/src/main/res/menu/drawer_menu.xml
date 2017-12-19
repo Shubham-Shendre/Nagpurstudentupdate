@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?><!-- display the menu inside the navigation drawer-->
+<menu
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    >
+    <group
+        android:id="@+id/groupone"
+        android:checkableBehavior="single">
+        <!-- adding the item  inside the drawer-->
+        <item
+            android:id="@+id/menu_home"
+            android:icon="@drawable/ic_home_black_48dp"
+            android:title="Home" />
+        <item
+            android:id="@+id/menu_syllabus"
+            android:icon="@drawable/ic_format_align_justify_black_48dp"
+            android:title="Syllabus" />
+
+        <item
+            android:id="@+id/menu_question_papers"
+            android:icon="@drawable/ic_help_outline_black_48dp"
+            android:title="Question papers" />
+        <item
+            android:id="@+id/menu_answer_papers"
+            android:icon="@drawable/ic_font_download_black_48dp"
+            android:title="Answer papers" />
+    </group>
+    <group
+        android:id="@+id/grouptwo"
+        android:checkableBehavior="single">
+        <item
+            android:id="@+id/menu_download"
+            android:icon="@drawable/ic_file_download_black_48dp"
+            android:title="Download" />
+        <item
+            android:id="@+id/menu_subscribed"
+            android:icon="@drawable/ic_book_black_48dp"
+            android:title="Subscribed" />
+    </group>
+    <group
+        android:id="@+id/groupthree"
+        android:checkableBehavior="single">
+        <item
+            android:id="@+id/menu_events"
+            android:icon="@drawable/ic_event_black_48dp"
+            android:title="Events" />
+        <item
+            android:id="@+id/menu_about_us"
+            android:icon="@drawable/ic_people_black_48dp"
+            android:title="About us" />
+    </group>
+</menu>
