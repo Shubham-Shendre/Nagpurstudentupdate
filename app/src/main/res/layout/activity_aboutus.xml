@@ -3,7 +3,7 @@
              Adnan Kazi aka Addy
              Furqan
              Sadat Hussain
-
+Updated by Pranav aka PMb
   for NagStud LLP Project nagpurstudents
  -->
 <!-- this layout belong to aboutus -->
@@ -30,10 +30,10 @@
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/activity_horizontal_margin"
         android:gravity="center"
-        android:text=""/>
-    <!-- create the list view-->
-    <ListView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/listview" />
+        android:text="NAGSTUD"/>
+    <!-- create the Expandable list view-->
+    <ExpandableListView
+        android:id="@+id/lvExp"
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"/>
 </LinearLayout>

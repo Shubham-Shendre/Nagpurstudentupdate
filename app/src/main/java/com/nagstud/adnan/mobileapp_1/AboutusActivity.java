@@ -10,83 +10,80 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.ExpandableListView;
 import android.widget.ListView;
 import android.widget.TextView;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+
 /**
  * Created by Shubham Dilip Shendre aka SdS
  *            Adnan Kazi aka Addy
  *            Furqan
  *            Sadat Hussain
- *
+ *            Pranav aka PMB
  * for NagStud LLP Project nagpurstudents
  */
 public class AboutusActivity extends AppCompatActivity {
-    //
-    // Declare Variables for list data
-    ListView list;
-    ListViewAdapter adapter;
-    String[] rank;
-    String[] country;
-    String[] population;
-    int[] flag;
 
+
+    ExpandableListAdapter listAdapter;
+    ExpandableListView expListView;
+    List<String> listDataHeader;
+    HashMap<String, List<String>> listDataChild;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_aboutus);
-        // add the textview into class file
-        TextView textView = findViewById(R.id.text_view);
-        //send the tex for the textview from class to xml
-        textView.setText("A TextView in about us activity");
-        //add the toolbar
-        Toolbar toolbar = (Toolbar)findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
-        //add the actionbar
-        ActionBar actionBar = getSupportActionBar();
-        //add the title at the action bar
-        actionBar.setTitle(getIntent().getStringExtra("string"));
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+        // get the listview
+        expListView = (ExpandableListView) findViewById(R.id.lvExp);
+
+        // preparing list data
+        prepareListData();
+
+        listAdapter = new ExpandableListAdapter(this, listDataHeader, listDataChild);
+
+        // setting list adapter
+        expListView.setAdapter(listAdapter);
 
 
-        // Generate sample data into string arrays
-        rank = new String[] { "1", "2", "3", "4" };
-        country = new String[] { "China", "India", "United States","Indonesia" };
-        population = new String[] { "1,354,040,000", "1,210,193,422","315,761,000", "237,641,326" };
-        flag = new int[] { R.drawable.china, R.drawable.india,
-                R.drawable.unitedstates, R.drawable.indonesia,
-                R.drawable.brazil, R.drawable.pakistan, R.drawable.nigeria,
-                R.drawable.bangladesh, R.drawable.russia, R.drawable.japan };
-        // Locate the ListView in listview_main.xml
-        list = (ListView) findViewById(R.id.listview);
-        // Pass results to ListViewAdapter Class
-        adapter = new ListViewAdapter(this, rank, country, population, flag);
-        // Binds the Adapter to the ListView
-        list.setAdapter(adapter);
-        // Capture ListView item click
-        list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view,
-                                    int position, long id) {
-                Intent i = new Intent(AboutusActivity.this, SingleItemView.class);
-                // Pass all data rank
-                i.putExtra("rank", rank);
-                // Pass all data country
-                i.putExtra("country", country);
-                // Pass all data population
-                i.putExtra("population", population);
-                // Pass all data flag
-                i.putExtra("flag", flag);
-                // Pass a single position
-                i.putExtra("position", position);
-                // Open SingleItemView.java Activity
-                startActivity(i);
-            }
-
-        });
     }
+    private void prepareListData() {
+        listDataHeader = new ArrayList<String>();
+        listDataChild = new HashMap<String, List<String>>();
 
+        // Adding child data
+        listDataHeader.add(" About Us");
+        listDataHeader.add("Previous Work");
+        listDataHeader.add("Privacy");
+
+        // Adding child data under Group
+        List<String> AboutUs = new ArrayList<String>();
+        AboutUs.add("About Us :\n" +
+                "\n" +
+                "At Website.com, we believe everyone deserves to have a website or online store. Innovation and simplicity makes us happy: our goal is to remove any technical or financial barriers that can prevent business owners from making their own website. We're excited to help you on your journey!");
+
+
+
+        List<String> PreviousWork = new ArrayList<String>();
+        PreviousWork.add("Previous Work :\n" +
+                "\n" +
+                "At Website.com, we believe everyone deserves to have a website or online store. Innovation and simplicity makes us happy: our goal is to remove any technical or financial barriers that can prevent business owners from making their own website. We're excited to help you on your journey!");
+
+
+        List<String> Privacy = new ArrayList<String>();
+        Privacy.add("Privacy :\n" +
+                "\n" +
+                "At Website.com, we believe everyone deserves to have a website or online store. Innovation and simplicity makes us happy: our goal is to remove any technical or financial barriers that can prevent business owners from making their own website. We're excited to help you on your journey!");
+
+        listDataChild.put(listDataHeader.get(0), AboutUs); // Header, Child data
+        listDataChild.put(listDataHeader.get(1), PreviousWork);
+        listDataChild.put(listDataHeader.get(2), Privacy);
+    }
     //add the menu item in action bar
     public boolean onCreateOptionsMenu(Menu menu) {
         //inflate the menu; this adds items to the action bar if it is present
