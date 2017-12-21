@@ -42,7 +42,7 @@ Updated by Pranav aka PMb
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:layout_gravity="center"
-        android:src="@drawable/ns2"
+        android:src="@drawable/logo"
         android:layout_margin="@dimen/_8sdp"/>
     <TextView
         android:id="@+id/text_view"
