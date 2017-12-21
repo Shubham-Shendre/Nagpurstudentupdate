@@ -9,9 +9,11 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.webkit.WebView;
 import android.widget.AdapterView;
 import android.widget.ExpandableListView;
 import android.widget.ListView;
+import android.widget.ScrollView;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -28,7 +30,7 @@ import java.util.List;
  */
 public class AboutusActivity extends AppCompatActivity {
 
-
+    ScrollView scrollView;
     ExpandableListAdapter listAdapter;
     ExpandableListView expListView;
     List<String> listDataHeader;
@@ -38,6 +40,21 @@ public class AboutusActivity extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_aboutus);
+        //add the toolbar at the top of the activity
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        //add the arrow to finsh or add the goback support
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.setTitle(getIntent().getStringExtra("string"));
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+        //
+        String htmlText = "<html><body style=\"text-align:justify\"> %s </body></Html>";
+        String myData = "Hello World! This tutorial is to show demo of displaying text with justify alignment in WebView.";
+
+        WebView webView = (WebView) findViewById(R.id.webView1);
+        webView.loadData(String.format(htmlText, myData), "text/html", "utf-8");
+        //
 
         // get the listview
         expListView = (ExpandableListView) findViewById(R.id.lvExp);
@@ -65,7 +82,9 @@ public class AboutusActivity extends AppCompatActivity {
         List<String> AboutUs = new ArrayList<String>();
         AboutUs.add("About Us :\n" +
                 "\n" +
-                "At Website.com, we believe everyone deserves to have a website or online store. Innovation and simplicity makes us happy: our goal is to remove any technical or financial barriers that can prevent business owners from making their own website. We're excited to help you on your journey!");
+                "At Website.com, we believe everyone deserves to have a website or online store. " +
+                "Innovation and simplicity makes us happy: our goal is to remove any technical or financial barriers " +
+                "that can prevent business owners from making their own website. We're excited to help you on your journey!");
 
 
 
