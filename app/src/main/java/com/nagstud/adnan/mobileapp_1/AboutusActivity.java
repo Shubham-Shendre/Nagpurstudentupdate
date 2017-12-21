@@ -50,7 +50,8 @@ public class AboutusActivity extends AppCompatActivity {
 
         //
         String htmlText = "<html><body style=\"text-align:justify\"> %s </body></Html>";
-        String myData = "Hello World! This tutorial is to show demo of displaying text with justify alignment in WebView.";
+        String myData = "NagpurStudents was founded by a bunch of college students who are not unlike many of us: struggling for study materials, and spending hours collecting question papers off college computers and libraries. Seldom did we find whatever we needed in time, and rarely the accurate ones. Only because of this, did our team take an initiative to revolutionize how we gather our syllabus related materials. \n" +
+                "The major streams we cover include Engineering, Law, Medicine, and Commerce. Our user-friendly website cover question papers and syllabus entirely that are accessed by more than 1000 users on a daily basis. Moreover, we constantly work on fixing loopholes we come across on our venture in education field. \n";
 
         WebView webView = (WebView) findViewById(R.id.webView1);
         webView.loadData(String.format(htmlText, myData), "text/html", "utf-8");
@@ -74,13 +75,14 @@ public class AboutusActivity extends AppCompatActivity {
         listDataChild = new HashMap<String, List<String>>();
 
         // Adding child data
-        listDataHeader.add(" About Us");
-        listDataHeader.add("Previous Work");
-        listDataHeader.add("Privacy");
+        listDataHeader.add("Student Helpline");
+        listDataHeader.add("Terms and conditions");
+        listDataHeader.add("Privacy & Policy");
+        listDataHeader.add("Legal");
 
         // Adding child data under Group
-        List<String> AboutUs = new ArrayList<String>();
-        AboutUs.add("About Us :\n" +
+        List<String> Studenthelp = new ArrayList<String>();
+        Studenthelp.add("About Us :\n" +
                 "\n" +
                 "At Website.com, we believe everyone deserves to have a website or online store. " +
                 "Innovation and simplicity makes us happy: our goal is to remove any technical or financial barriers " +
@@ -88,20 +90,26 @@ public class AboutusActivity extends AppCompatActivity {
 
 
 
-        List<String> PreviousWork = new ArrayList<String>();
-        PreviousWork.add("Previous Work :\n" +
+        List<String> TC = new ArrayList<String>();
+        TC.add("Previous Work :\n" +
                 "\n" +
                 "At Website.com, we believe everyone deserves to have a website or online store. Innovation and simplicity makes us happy: our goal is to remove any technical or financial barriers that can prevent business owners from making their own website. We're excited to help you on your journey!");
 
 
-        List<String> Privacy = new ArrayList<String>();
-        Privacy.add("Privacy :\n" +
+        List<String> PC = new ArrayList<String>();
+        PC.add("Privacy :\n" +
                 "\n" +
                 "At Website.com, we believe everyone deserves to have a website or online store. Innovation and simplicity makes us happy: our goal is to remove any technical or financial barriers that can prevent business owners from making their own website. We're excited to help you on your journey!");
 
-        listDataChild.put(listDataHeader.get(0), AboutUs); // Header, Child data
-        listDataChild.put(listDataHeader.get(1), PreviousWork);
-        listDataChild.put(listDataHeader.get(2), Privacy);
+        List<String> Legal = new ArrayList<String>();
+        PC.add("Privacy :\n" +
+                "\n" +
+                "At Website.com, we believe everyone deserves to have a website or online store. Innovation and simplicity makes us happy: our goal is to remove any technical or financial barriers that can prevent business owners from making their own website. We're excited to help you on your journey!");
+
+        listDataChild.put(listDataHeader.get(0), Studenthelp); // Header, Child data
+        listDataChild.put(listDataHeader.get(1), TC);
+        listDataChild.put(listDataHeader.get(2), PC);
+        listDataChild.put(listDataHeader.get(3), Legal);
     }
     //add the menu item in action bar
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -133,4 +141,5 @@ public class AboutusActivity extends AppCompatActivity {
     public void onBackPressed() {
         finish();
     }
+  
 }
