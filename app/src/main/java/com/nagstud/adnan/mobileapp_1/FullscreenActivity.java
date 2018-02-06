@@ -137,7 +137,8 @@ public class FullscreenActivity extends AppCompatActivity implements NavigationV
             Intent intent = new Intent(this, EventsActivity.class);
             intent.putExtra("string", String.valueOf(item));
             startActivity(intent);
-        } else if (id == R.id.menu_about_us) {
+        }
+        else if (id == R.id.menu_about_us) {
             Intent intent = new Intent(this, AboutusActivity.class);
             intent.putExtra("string", String.valueOf(item));
             startActivity(intent);

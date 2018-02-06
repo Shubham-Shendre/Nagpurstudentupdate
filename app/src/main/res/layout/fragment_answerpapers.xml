@@ -45,6 +45,14 @@
             android:background="@color/colorWhite"
             android:onClick="getdata"
             android:text="getdata" />
+        <Button
+            android:id="@+id/getnew"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@color/colorWhite"
+            android:onClick="getnew"
+            android:text="getnew" />
 
 
 

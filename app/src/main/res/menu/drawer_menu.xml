@@ -39,6 +39,7 @@
     <group
         android:id="@+id/groupthree"
         android:checkableBehavior="single">
+
         <item
             android:id="@+id/menu_events"
             android:icon="@drawable/ic_event_black_48dp"

@@ -8,41 +8,51 @@
   for NagStud LLP Project nagpurstudents
  -->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="@dimen/activity_horizontal_margin">
-    <!-- display thetext from fragment questionpapers.java -->
+
     <TextView
-        android:id="@+id/text_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center"
-        android:text="A TextView in Fragment" />
-    <!-- add the textview to add display the please select the year fragment-->
-    <TextView
-        android:id="@+id/text_view2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:text="please select year" />
-    <!-- add the drop down list-->
-    <Spinner
-        android:id="@+id/year"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:layout_marginTop="8dp" />
-    <!-- add the textview for th msg-->
-    <TextView
-        android:id="@+id/text_view3"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:text="Question papers download" />
-    <!-- add the listview of the answerspaper-->
+        android:text="Select Year"
+        android:id="@+id/text1"/>
     <ListView
-        android:id="@+id/list"
+        android:id="@+id/listView1"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="200dp"
+        android:layout_below="@+id/progressBar"
+        android:layout_toEndOf="@+id/progressBar"
+        android:layout_toRightOf="@+id/progressBar"
+        app:layout_constraintTop_toBottomOf="@+id/text1"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Downloads paper"
+        android:id="@+id/text2"/>
+    <ListView
+        android:id="@+id/listView2"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_below="@+id/progressBar"
+        android:layout_toEndOf="@+id/progressBar"
+        android:layout_toRightOf="@+id/progressBar"
+        app:layout_constraintTop_toBottomOf="@+id/text2"/>
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:visibility="gone" />
+    <ProgressBar
+        android:id="@+id/progressBar2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:visibility="gone" />
 </LinearLayout>

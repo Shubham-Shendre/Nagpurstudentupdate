@@ -26,79 +26,17 @@
     <!-- create the textview show the name of layout -->
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/btn_dialog"
+        android:text="Select faculty"
         android:layout_width="match_parent"
-        android:layout_height="70dp"
-        android:gravity="start"
-        android:text="Log out"
-        android:textAlignment="viewStart" />
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Current Faculty: Engineering..." />
-
-    <Button
-        android:id="@+id/button3"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="start"
-        android:text="Log in"
-        android:textAlignment="viewStart" />
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Current Faculty: Engineering..." />
-
-    <Button
-        android:id="@+id/button4"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="start"
-        android:text="Change Faculty"
-        android:textAlignment="textStart" />
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Current Faculty: Engineering..." />
-
-    <Button
-        android:id="@+id/button5"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="start"
-        android:text="Change Branch"
-        android:textAlignment="textStart" />
-
-    <TextView
+        android:layout_height="wrap_content" />
+    <ProgressBar
+        android:id="@+id/progressBar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Current Faculty: Engineering..." />
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:visibility="gone" />
 
-    <Button
-        android:id="@+id/button6"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-
-        android:text="Change Sem" />
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Current Faculty: Engineering..." />
-
-    <Button
-        android:id="@+id/downloadpos"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Download Position" />
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Downloads/nagpurstudents" />
-    <!-- create the list view-->
 
 </LinearLayout>

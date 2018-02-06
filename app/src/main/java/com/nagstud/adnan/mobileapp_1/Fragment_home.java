@@ -1,14 +1,20 @@
-package com.nagstud.adnan.mobileapp_1;
+        package com.nagstud.adnan.mobileapp_1;
 //this class handle the fragment home layout
 
-import android.os.Bundle;
-import android.support.annotation.Nullable;
-import android.support.v4.app.Fragment;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
+        import android.os.Bundle;
+        import android.support.annotation.Nullable;
+        import android.support.v4.app.Fragment;
+        import android.view.LayoutInflater;
+        import android.view.View;
+        import android.view.ViewGroup;
+        import android.os.Bundle;
+        import android.support.v7.app.AppCompatActivity;
+        import android.support.v7.widget.LinearLayoutManager;
+        import android.support.v7.widget.RecyclerView;
+
+        import java.util.ArrayList;
+        import java.util.Arrays;
+
 /**
  * Created by Shubham Dilip Shendre aka SdS
  *            Adnan Kazi aka Addy
@@ -18,14 +24,18 @@ import android.view.ViewGroup;
  * for NagStud LLP Project nagpurstudents
  */
 public class Fragment_home extends Fragment {
+    RecyclerView mRecyclerView;
+    RecyclerView.LayoutManager mLayoutManager;
+    RecyclerView.Adapter mAdapter;
+    ArrayList<String> alName;
+    ArrayList<Integer> alImage;
 
-    private RecyclerView horizontalList, horizontalList2, horizontalList3;
-    private HorizontalListAdapter horizontalAdapter, horizontalAdapter2, horizontalAdapter3;
+    private static final int MULTIPLE = 0;
+    private UpdateDataAdapter mAdapter2;
 
-    //private RecyclerView verticalList; for vertical
-    //private VerticalListAdapter verticalAdapter; for vertical
-    //private RecyclerView recyclerView; for grid
-    //private GridViewAdapter adapter;  for grid
+    public Fragment_home() {
+        // Required empty public constructor
+    }
 
     @Nullable
     @Override
@@ -37,59 +47,55 @@ public class Fragment_home extends Fragment {
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        //for horizontallistview1
-        horizontalList = (RecyclerView) view.findViewById(R.id.horizontal_recycler);
-        horizontalList.setHasFixedSize(true);
-        //set horizontal LinearLayout as layout manager to creating horizontal list view
-        LinearLayoutManager horizontalManager = new LinearLayoutManager(getActivity(), LinearLayoutManager.HORIZONTAL, false);
-        horizontalList.setLayoutManager(horizontalManager);
-        horizontalAdapter = new HorizontalListAdapter(getActivity());
-        horizontalList.setAdapter(horizontalAdapter);
+        //for list 1
+        alName = new ArrayList<>(Arrays.asList("Engineering", "Btech", "Commerce", "Medicine", "Law"));
+        alImage = new ArrayList<>(Arrays.asList(R.drawable.eng, R.drawable.btech, R.drawable.commerce, R.drawable.medicine, R.drawable.law));
 
-        //for horizontallistview2
-        horizontalList2 = (RecyclerView) view.findViewById(R.id.horizontal_recycler2);
-        horizontalList2.setHasFixedSize(true);
-        //set horizontal LinearLayout as layout manager to creating horizontal list view
-        LinearLayoutManager horizontalManager2 = new LinearLayoutManager(getActivity(), LinearLayoutManager.HORIZONTAL, false);
-        horizontalList2.setLayoutManager(horizontalManager2);
-        horizontalAdapter2 = new HorizontalListAdapter(getActivity());
-        horizontalList2.setAdapter(horizontalAdapter2);
+        // Calling the RecyclerView
+        mRecyclerView = (RecyclerView) view.findViewById(R.id.recycler_view1);
+        mRecyclerView.setHasFixedSize(true);
 
-        //for horizontallistview3
-        horizontalList3 = (RecyclerView) view.findViewById(R.id.horizontal_recycler3);
-        horizontalList3.setHasFixedSize(true);
-        //set horizontal LinearLayout as layout manager to creating horizontal list view
-        LinearLayoutManager horizontalManager3 = new LinearLayoutManager(getActivity(), LinearLayoutManager.HORIZONTAL, false);
-        horizontalList3.setLayoutManager(horizontalManager3);
-        horizontalAdapter3 = new HorizontalListAdapter(getActivity());
-        horizontalList3.setAdapter(horizontalAdapter3);
+        // The number of Columns
+        mLayoutManager = new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL, false);
+        mRecyclerView.setLayoutManager(mLayoutManager);
 
-//        for horizontallistview1
-//        horizontalList = (RecyclerView) view.findViewById(R.id.horizontal_recycler);
-//        horizontalList.setHasFixedSize(true);
-//        set horizontal LinearLayout as layout manager to creating horizontal list view
-//        LinearLayoutManager horizontalManager = new LinearLayoutManager(getActivity(), LinearLayoutManager.HORIZONTAL, false);
-//        horizontalList.setLayoutManager(horizontalManager);
-//        horizontalAdapter = new HorizontalListAdapter(getActivity());
-//        horizontalList.setAdapter(horizontalAdapter);
+        mAdapter = new HLVAdapter(getContext(), alName, alImage);
+        mRecyclerView.setAdapter(mAdapter);
 
-//         for verticallistview
-//         verticalList = (RecyclerView) view.findViewById(R.id.recyle_view);
-//         verticalList.setHasFixedSize(true);
-//         set vertical LinearLayout as layout manager for vertial listview
-//         LinearLayoutManager layoutManager = new LinearLayoutManager(getActivity(), LinearLayoutManager.VERTICAL, false);
-//         verticalList.setLayoutManager(layoutManager);
-//         verticalAdapter = new VerticalListAdapter(getActivity());
-//         verticalList.setAdapter(verticalAdapter);
+        //for list 2
+        alName = new ArrayList<>(Arrays.asList("Engineering", "Btech", "Commerce", "Medicine", "Law"));
+        // Calling the RecyclerView
+        mRecyclerView = (RecyclerView) view.findViewById(R.id.recycler_view2);
+        mRecyclerView.setHasFixedSize(true);
 
+        // The number of Columns
+        mLayoutManager = new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL, false);
+        mRecyclerView.setLayoutManager(mLayoutManager);
 
-//        for grid
-//        recyclerView = (RecyclerView)findViewById(R.id.recyle_view);
-//        recyclerView.setHasFixedSize(true);
-//        set GridLayoutManager
-//        GridLayoutManager layoutManager = new GridLayoutManager(this, 3);
-//        recyclerView.setLayoutManager(layoutManager);
-//        adapter = new GridViewAdapter(this);
-//        recyclerView.setAdapter(adapter);
+        mAdapter = new HLVAdapter2(getContext(), alName);
+        mRecyclerView.setAdapter(mAdapter);
+
+        //for list3
+        alName = new ArrayList<>(Arrays.asList("FirstyearCommon", "CSE", "ETC", "EXTC", "MECH","CIVIL"));
+        // Calling the RecyclerView
+        mRecyclerView = (RecyclerView) view.findViewById(R.id.recycler_view3);
+        mRecyclerView.setHasFixedSize(true);
+
+        // The number of Columns
+        mLayoutManager = new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL, false);
+        mRecyclerView.setLayoutManager(mLayoutManager);
+
+        mAdapter = new HLVAdapter2(getContext(), alName);
+        mRecyclerView.setAdapter(mAdapter);
+          }
+    private ArrayList<UpdateData> getDataSet() {
+        ArrayList results = new ArrayList<>();
+        for (int index = 0; index < 20; index++) {
+            UpdateData obj = new UpdateData("Some Primary Text " + index,
+                    "Secondary " + index);
+            results.add(index, obj);
+        }
+        return results;
     }
+
 }

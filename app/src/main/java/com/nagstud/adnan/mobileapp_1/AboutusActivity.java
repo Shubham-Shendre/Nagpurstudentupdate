@@ -48,14 +48,7 @@ public class AboutusActivity extends AppCompatActivity {
         actionBar.setTitle(getIntent().getStringExtra("string"));
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        //
-        String htmlText = "<html><body style=\"text-align:justify\"> %s </body></Html>";
-        String myData = "NagpurStudents was founded by a bunch of college students who are not unlike many of us: struggling for study materials, and spending hours collecting question papers off college computers and libraries. Seldom did we find whatever we needed in time, and rarely the accurate ones. Only because of this, did our team take an initiative to revolutionize how we gather our syllabus related materials. \n" +
-                "The major streams we cover include Engineering, Law, Medicine, and Commerce. Our user-friendly website cover question papers and syllabus entirely that are accessed by more than 1000 users on a daily basis. Moreover, we constantly work on fixing loopholes we come across on our venture in education field. \n";
 
-        WebView webView = (WebView) findViewById(R.id.webView1);
-        webView.loadData(String.format(htmlText, myData), "text/html", "utf-8");
-        //
 
         // get the listview
         expListView = (ExpandableListView) findViewById(R.id.lvExp);
@@ -141,5 +134,5 @@ public class AboutusActivity extends AppCompatActivity {
     public void onBackPressed() {
         finish();
     }
-  
+
 }
